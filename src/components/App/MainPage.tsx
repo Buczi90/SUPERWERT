@@ -78,8 +78,6 @@ const MainPage: React.FC = () => {
     handleOpen();
   };
 
-  /* */
-
   return (
     <>
       <Filter filterValue={filter} setFilterValue={setFilter} />
