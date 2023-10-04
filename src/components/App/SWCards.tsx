@@ -6,10 +6,11 @@ import { PeopleModel } from '../../models';
 
 type SWCardProps = {
   data: PeopleModel[];
+  page: number;
   onCardClick: (name: string) => void;
 };
 
-const SWCards: React.FC<SWCardProps> = ({ data, onCardClick }) => {
+const SWCards: React.FC<SWCardProps> = ({ data, page, onCardClick }) => {
   return (
     <Grid container direction="row" justifyContent="center" alignItems="top" spacing={2} mt={2}>
       {data.map((item, index) => {
@@ -21,7 +22,11 @@ const SWCards: React.FC<SWCardProps> = ({ data, onCardClick }) => {
                   onCardClick(item.name);
                 }}
               >
-                <CardMedia component="img" height={200} image="https://picsum.photos/500" alt="green iguana" />
+                <CardMedia
+                  component="img"
+                  height={200}
+                  image={`https://picsum.photos/300/?random=${page * 10 + index}`}
+                />
                 <CardContent>
                   <Typography gutterBottom variant="h5" component="div" align="center">
                     {item.name}

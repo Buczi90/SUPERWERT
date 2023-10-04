@@ -82,7 +82,7 @@ const MainPage: React.FC = () => {
     <>
       <Filter filterValue={filter} setFilterValue={setFilter} />
       <Container maxWidth="lg">
-        <SWCards data={data} onCardClick={onCardClick} />
+        <SWCards data={data} page={page} onCardClick={onCardClick} />
       </Container>
       <Stack
         sx={{
